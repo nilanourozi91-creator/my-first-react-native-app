@@ -1,10 +1,22 @@
 import Coffee from "@/assets/images/coffee.jpg";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { Link } from "expo-router";
+import {
+  ImageBackground,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 const App = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={Coffee} resizeMode="cover" style={styles.Image}>
-        <Text style={styles.Text}>coffee shopp</Text>
+        <Text style={styles.title}>coffee shopp</Text>
+        <Link style={{ marginHorizontal: "auto" }} asChild href="/explore">
+          <Pressable>
+            <text>Explore</text>
+          </Pressable>
+        </Link>
       </ImageBackground>
     </View>
   );
@@ -25,11 +37,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
-  Text: {
+  title: {
     color: "white",
     fontSize: 25,
     fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "rgba(0,0,0,0.5)",
+    marginBottom: 120,
+  },
+  Link: {
+    color: "white",
+    fontSize: 25,
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    textDecorationLine: "underline",
+    padding: 42,
   },
 });
