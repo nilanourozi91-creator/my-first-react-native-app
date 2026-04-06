@@ -1,4 +1,4 @@
-import Coffee from "@/assets/images/coffee.jpg";
+import Coffee from "@/assets/images/coffee-1.jpg";
 import { Link } from "expo-router";
 import {
   ImageBackground,
@@ -12,9 +12,9 @@ const App = () => {
     <View style={styles.container}>
       <ImageBackground source={Coffee} resizeMode="cover" style={styles.Image}>
         <Text style={styles.title}>coffee shopp</Text>
-        <Link style={{ marginHorizontal: "auto" }} asChild href="/explore">
-          <Pressable>
-            <text>Explore</text>
+        <Link style={{ marginHorizontal: "auto" }} asChild href="/ContactUs">
+          <Pressable style={styles.button}>
+            <text style={styles.byttontext}>Contact Us</text>
           </Pressable>
         </Link>
       </ImageBackground>
@@ -53,5 +53,28 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.5)",
     textDecorationLine: "underline",
     padding: 42,
+  },
+  text: {
+    color: "white",
+    fontSize: 25,
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    textDecorationLine: "underline",
+    padding: 42,
+  },
+  button: {
+    height: 60,
+    borderRadius: 20,
+    justifyContent: "center",
+    backgroundColor: "rgba(0,0,0,0.27)",
+    padding: 6,
+  },
+  byttontext: {
+    color: "white",
+    fontSize: 25,
+    fontWeight: "bold",
+    textAlign: "center",
+    padding: 5,
   },
 });
